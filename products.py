@@ -12,4 +12,13 @@ while True:
 	# products = [p] 這種寫法只會裝最後一個進去,不會累計裝入
 	products.append([name, price])
 print(products)
-print(products[0][0], products[0][1])
+# print(products[0][0], products[0][1])
+
+# for product in products:
+# 	print(product)
+# 	for p in product:
+# 		print(p)
+
+for p in products:
+	print(p[0], '的價格是', p[1])
+
