@@ -1,18 +1,26 @@
-# 讀取檔案
+import os
+
 products = []
-with open('products.csv', 'r') as f:
-	for line in f:
-		# s = line.strip().split(',')
-		# 	    # 刪除\n  以,做切割
-		# print(s)
-		# name = s[0]
-		# price = s[1]
-		if '商品, 價格' in line:
-			continue # 繼續 跳到下一迴 / break 跳出迴圈 (continue, break 都只能寫在迴圈裡)
-		name, price = line.strip().split(',')
-		# print(name, price)
-		products.append([name,price])
-print(products)
+
+# 讀取檔案
+if os.path.isfile('products.csv'): # 檢查檔案在不在
+	print('yeah!')
+	with open('products.csv', 'r') as f: 
+		for line in f:
+			# s = line.strip().split(',')
+			# 	     # 刪除\n  以,做切割
+			# print(s)
+			# name = s[0]
+			# price = s[1]
+			if '商品, 價格' in line:
+				continue # 繼續 跳到下一迴 / break 跳出迴圈 (continue, break 都只能寫在迴圈裡)
+			name, price = line.strip().split(',')
+			# print(name, price)
+			products.append([name,price])
+	print(products)
+
+else:
+	print('file cannot find')
 
 
 # 讓使用者輸入		
